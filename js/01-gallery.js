@@ -50,7 +50,7 @@ galleryContainer.addEventListener('click', galleryContainerClick)
 function galleryContainerClick (event) {
   if (event.target.nodeName !== 'IMG') {
     return}
-  event.preventdefault();
+  // event.preventdefault();
 
 
 const bigImageLink = event.target.dataset.source;
@@ -61,5 +61,9 @@ const instance = basicLightbox.create(`
 <img src="${bigImageLink}">`)
 
 instance.show()
+
+document.addEventListener('keydown', event =>{
+  if(event.key ==='Escape'){}
+})
 
 }
