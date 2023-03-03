@@ -50,14 +50,14 @@ galleryContainer.addEventListener('click', galleryContainerClick)
 function galleryContainerClick (event) {
   if (event.target.nodeName !== 'IMG') {
     return}
-  event.preventdefault();
+  // event.preventdefault();
 
 
 const bigImageLink = event.target.dataset.source;
 
 console.log(bigImageLink)
 const instance = basicLightbox.create(`
-<img src="${original}">`)
+<img src="${bigImageLink}">`)
 
 instance.show()
 
