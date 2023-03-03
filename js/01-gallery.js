@@ -42,6 +42,7 @@ function createGalleryItem (galleryItems) {
 
 // const bigImageUrl = document.querySelector('.gallery__item ')
 
+galleryContainer.addEventListener('click', galleryContainerClick)
 
 // console.log(bigImageUrl.dataset)
 function galleryContainerClick (event) {
@@ -50,7 +51,6 @@ function galleryContainerClick (event) {
   }
   event.preventdefault()
 
- 
 
 const bigImageLink = event.target.dataset.source;
 
@@ -61,4 +61,3 @@ const instance = basicLightbox.create(`
 instance.show()
 
 }
-galleryContainer.addEventListener('click', galleryContainerClick)
