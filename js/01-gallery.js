@@ -40,7 +40,7 @@ function createGalleryItem (galleryItems) {
 // отслеживания кликов на детей
 
 
-const bigImageUrl = document.querySelector('.gallery__item ')
+// const bigImageUrl = document.querySelector('.gallery__item ')
 
 
 // console.log(bigImageUrl.dataset)
@@ -53,9 +53,10 @@ function galleryContainerClick (event) {
  
 
 const bigImageLink = event.target.dataset.source;
+
 console.log(bigImageLink)
 const instance = basicLightbox.create(`
-<img src="${bigImageLink}">`)
+<img src="${original}">`)
 
 instance.show()
 
