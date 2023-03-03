@@ -1,34 +1,61 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from './gallery-items.js'
 // Change code below this line
 
-console.log(galleryItems);
+console.log(galleryItems)
 
+// Получили ссылку на div Container
+const galleryContainer = document.querySelector('.gallery')
 
-const galaryContainer = document.querySelector('.gallery')
+// Переменная для хранения элементов галереи.
+//  Результат вызова функции создания всей разметки
+const galleryMarkup = createGalleryItem(galleryItems)
+// Приврепили все элементы к div Container
+galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
 
-const galereMarkup = createGalleryItem(galleryItems);
+console.log(galleryContainer)
 
-galaryContainer.insertAdjacentHTML('beforeend', galereMarkup)
-
-console.log(galaryContainer)
-console.log(createGalleryItem(galleryItem));
-
-function createGalleryItem (galleryItem) {
-  const markup = galleryItems.map(({preview, original, description}) => {
-    return `
+console.log(createGalleryItem(galleryItems))
+// Функция для рендера разметки из массива и создания html
+function createGalleryItem (galleryItems) {
+  const markup = galleryItems
+    .map(({ preview, original, description }) => {
+      return `
     <div class="gallery__item">
         <a class="gallery__link" href="large-image.jpg">
           <img
             class="gallery__image"
             src="${preview}"
             data-source="${original}"
-            alt=""${description}"
+            alt="${description}"
           />
         </a>
         </div>
-        `;
-  }).join('');
+        `
+    })
+    .join('')
   console.log(markup)
-return markup;
+  return markup
+}
+// Вешаем слушателя на основной контейнер для делегированния и
+// отслеживания кликов на детей
+galleryContainer.addEventListener('click', galleryContainerClick)
+const bigImageUrl = document.querySelector('.gallery__item ')
+
+
+// console.log(bigImageUrl.dataset)
+function galleryContainerClick (event) {
+  if (event.target.nodeName !== 'IMG') {
+    return
+  }
+  event.preventdefault()
+
  
+
+const bigImageLink = event.target.dataset.source;
+console.log(bigImageLink)
+const instance = basicLightbox.create(`
+<img src="${bigImageLink}">`)
+
+instance.show()
+
 }
