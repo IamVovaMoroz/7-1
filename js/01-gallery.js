@@ -14,7 +14,7 @@ galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
 
 console.log(galleryContainer)
 
-console.log(createGalleryItem(galleryItems))
+createGalleryItem(galleryItems)
 // Функция для рендера разметки из массива и создания html
 function createGalleryItem (galleryItems) {
   const markup = galleryItems
@@ -33,23 +33,24 @@ function createGalleryItem (galleryItems) {
         `
     })
     .join('')
-  console.log(markup)
+  // console.log(markup)
   return markup
 }
+
+// const bigImageUrl = document.querySelector('.gallery__item ')
 // Вешаем слушателя на основной контейнер для делегированния и
 // отслеживания кликов на детей
 
 
-// const bigImageUrl = document.querySelector('.gallery__item ')
+
 
 galleryContainer.addEventListener('click', galleryContainerClick)
 
 // console.log(bigImageUrl.dataset)
 function galleryContainerClick (event) {
   if (event.target.nodeName !== 'IMG') {
-    return
-  }
-  event.preventdefault()
+    return}
+  event.preventdefault();
 
 
 const bigImageLink = event.target.dataset.source;
