@@ -38,7 +38,8 @@ function createGalleryItem (galleryItems) {
 }
 // Вешаем слушателя на основной контейнер для делегированния и
 // отслеживания кликов на детей
-galleryContainer.addEventListener('click', galleryContainerClick)
+
+
 const bigImageUrl = document.querySelector('.gallery__item ')
 
 
@@ -59,3 +60,4 @@ const instance = basicLightbox.create(`
 instance.show()
 
 }
+galleryContainer.addEventListener('click', galleryContainerClick)
