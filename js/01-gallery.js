@@ -54,7 +54,7 @@ galleryContainer.addEventListener('click', galleryContainerClick)
 function galleryContainerClick (event) {
   if (event.target.nodeName !== 'IMG') {
     return}
-  // event.preventdefault();
+  event.preventDefault();
 
 
 const bigImageLink = event.target.dataset.source;
@@ -68,11 +68,11 @@ instance.show()
 
 document.addEventListener('keydown', event =>{
   if(event.key ==='Escape'){
-    console.log(event.key)
+    console.log(bigImageLink)
   }
-  else if(ImagesUrl){
-    
-  }
+
+ 
+
 })
 console.log(ImagesUrl)
 }
