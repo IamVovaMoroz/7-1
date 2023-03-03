@@ -9,7 +9,7 @@ const galleryContainer = document.querySelector('.gallery')
 // Переменная для хранения элементов галереи.
 //  Результат вызова функции создания всей разметки
 const galleryMarkup = createGalleryItem(galleryItems)
-// Приврепили все элементы к div Container
+// Прикрепили все элементы к div Container
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup)
 
 console.log(galleryContainer)
@@ -37,7 +37,11 @@ function createGalleryItem (galleryItems) {
   return markup
 }
 
-// const bigImageUrl = document.querySelector('.gallery__item ')
+// Ссылка на активную картинку
+const ImagesUrl = document.querySelector('.gallery__link ')
+
+
+
 // Вешаем слушателя на основной контейнер для делегированния и
 // отслеживания кликов на детей
 
@@ -63,7 +67,12 @@ const instance = basicLightbox.create(`
 instance.show()
 
 document.addEventListener('keydown', event =>{
-  if(event.key ==='Escape'){}
+  if(event.key ==='Escape'){
+    console.log(event.key)
+  }
+  else if(ImagesUrl){
+    
+  }
 })
-
+console.log(ImagesUrl)
 }
