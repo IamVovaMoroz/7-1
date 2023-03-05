@@ -66,13 +66,16 @@ const instance = basicLightbox.create(`
 
 instance.show()
 
-// document.addEventListener('keydown', event =>{
-//   if(event.key ==='Escape'){
-//     console.log(bigImageLink)
-//   }
+document.addEventListener('keydown', event =>{
+  if(event.key ==='Escape'){
+   
+    instance.close();
+
+    document.removeEventListener("keydown", event);
+  }
 
  
 
-// })
+})
 // console.log(ImagesUrl)
 }
